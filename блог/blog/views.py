@@ -21,3 +21,7 @@ def home(request):
  
 def single(request, id=None):
     return render(request, "partial/single.html")
+
+def add(request):
+  template = loader.get_template('add.html')
+  return HttpResponse(template.render({}, request))
