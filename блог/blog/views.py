@@ -27,11 +27,11 @@ def add(request):
   return HttpResponse(template.render({}, request))
 
 def addrecord(request):
-tietle= request.POST['tietle']
-descript = request.POST['descript']
-keywords = request.POST['keywords']
-image =request.POST['image']
-content = request.POST['content']
+ tietle= request.POST['tietle']
+ descript = request.POST['descript']
+ keywords = request.POST['keywords']
+ image =request.POST['image']
+ content = request.POST['content']
  member =  Post (title=tietle, description=descript, keywords =keywords, image=image, content=content)
   member.save()
   return HttpResponseRedirect(reverse('index'))
