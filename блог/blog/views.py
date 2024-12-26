@@ -31,6 +31,6 @@ def addrecord(request):
 Ключевые слова = request.POST['keywords']
 Изображение =request.POST['image']
 Содержание = request.POST['content']
- member =  POST(firstname=x, lastname=y)
+ member =  POST(tietlename=Названеи статьи, descriptname=Ключевые слова,keywordsname=Ключевые слова,imagename=Изображение,contentname=Содержание)
   member.save()
   return HttpResponseRedirect(reverse('index'))
