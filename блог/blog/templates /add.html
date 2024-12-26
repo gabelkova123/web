@@ -1,8 +1,25 @@
 
-from django.urls import path
- 
-from .import views
- 
-urlpatterns = [
-    path('', views.home, name='home'),
-]
+<h1>Add member</h1>
+
+<form action="addrecord/" method="post">
+{% csrf_token %}
+Названеи статьи:<br>
+<input name="tietle">
+<br><br>
+ Описание:<br>
+<input name="descript">
+<br><br>
+<input type="submit" value="Submit">
+Ключевые слова:<br>
+<input name="keywords">
+<br><br>
+<input type="submit" value="Submit">
+  Изображение:<br>
+<input name="image ">
+<br><br>
+<input type="submit" value="Submit">
+Содержание:<br>
+<input name=" content = m">
+<br><br>
+<input type="submit" value="Submit">
+</form>
