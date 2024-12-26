@@ -1,28 +1,12 @@
-from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
  
-from  blog.models import Post
+urlpatterns = [
+    path('',  include('blog.urls')),
+    path('admin/', admin.site.urls),
+]
  
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
  
-def home(request):
-    postList = Post.objects.filter(visible='1')
-    paginator = Paginator(postList, 2)
-    page = request.GET.get('page')
-    posts = paginator.get_page(page)
- 
-    context = {
-        "posts": posts,
-        "title": "Главная страница блога",
-        "desc": "Описание для главной страницы",
-        "key": "ключевые, слова",
-    }
-    return render(request, "partial/home.html", context)
- 
-def single(request, id=None):
-    post = get_object_or_404(Post, id=id)
- 
-    context = {
-        "post": post,
-    }
-    return render(request, "partial/single.html", context)
