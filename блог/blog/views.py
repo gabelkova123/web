@@ -26,11 +26,11 @@ def add(request):
   template = loader.get_template('add.html')
   return HttpResponse(template.render({}, request))
 def addrecord(request):
- Названеи статьи = request.POST['tietle']
-Описание = request.POST['descript']
-Ключевые слова = request.POST['keywords']
-Изображение =request.POST['image']
-Содержание = request.POST['content']
- member =  POST(tietlename=Названеи статьи, descriptname=Ключевые слова,keywordsname=Ключевые слова,imagename=Изображение,contentname=Содержание)
+tietle= request.POST['tietle']
+descript = request.POST['descript']
+keywords = request.POST['keywords']
+image =request.POST['image']
+content = request.POST['content']
+ member =  Post (tietlename=Названеи статьи, descriptname=Ключевые слова,keywordsname=Ключевые слова,imagename=Изображение,contentname=Содержание)
   member.save()
   return HttpResponseRedirect(reverse('index'))
