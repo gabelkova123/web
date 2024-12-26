@@ -25,6 +25,7 @@ def single(request, id=None):
 def add(request):
   template = loader.get_template('add.html')
   return HttpResponse(template.render({}, request))
+
 def addrecord(request):
 tietle= request.POST['tietle']
 descript = request.POST['descript']
