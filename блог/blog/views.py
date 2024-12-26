@@ -25,3 +25,9 @@ def single(request, id=None):
 def add(request):
   template = loader.get_template('add.html')
   return HttpResponse(template.render({}, request))
+def addrecord(request):
+  x = request.POST['first']
+  y = request.POST['last']
+  member = Members(firstname=x, lastname=y)
+  member.save()
+  return HttpResponseRedirect(reverse('index'))
