@@ -32,6 +32,6 @@ descript = request.POST['descript']
 keywords = request.POST['keywords']
 image =request.POST['image']
 content = request.POST['content']
- member =  Post (tietlename=Названеи статьи, descriptname=Ключевые слова,keywordsname=Ключевые слова,imagename=Изображение,contentname=Содержание)
+ member =  Post (title=tietle, description=descript, keywords =keywords, image=image, content=content)
   member.save()
   return HttpResponseRedirect(reverse('index'))
